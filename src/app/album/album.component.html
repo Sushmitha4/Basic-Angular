@@ -1,0 +1,27 @@
+<div class="container">
+  <input
+    type="text"
+    class="form-control mt-2"
+    placeholder="Add title"
+    #title
+    (keyup.enter)="createTitle(title)"
+  />
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let album of albums">
+      <h1>{{ album.title }}</h1>
+      <!--<p>{{ post.body }}</p>-->
+      <button
+        class="btn btn-danger btn-sm float-right"
+        (click)="removeTitle(post)"
+      >
+        Remove
+      </button>
+      <button
+        class="btn btn-primary btn-sm float-right ml-1 mr-1"
+        (click)="updateTitle(post)"
+      >
+        Update
+      </button>
+    </li>
+  </ul>
+</div>

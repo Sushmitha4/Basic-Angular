@@ -1,0 +1,121 @@
+<!--template driven form-->
+<div class="container">
+  <div class="col-md-4 offset-4 mt-2 card">
+    <div class="card-body">
+      <!--h1>display-5+form>div>lable["for=firstname"]-->
+      <h1 class="display-5 text-center text-uppercase">Contact</h1>
+      <form #form="ngForm" (ngSubmit)="login(form)">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input
+            type="text"
+            id="firstname"
+            ngModel
+            name="firstname"
+            #firstname="ngModel"
+            class="form-control"
+            placeholder="Enter the first name"
+            required
+            minlength="3"
+            maxlength="10"
+          />
+
+          <div
+            *ngIf="firstname.touched && firstname.invalid"
+            class="text-danger m-2"
+          >
+            <p *ngIf="firstname.errors.required">First name is required</p>
+            <p *ngIf="firstname.errors.minlength">
+              First name should be minimum 3 characters
+            </p>
+          </div>
+
+          <label for="lastname">Lastname</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            ngModel
+            #lastname="ngModel"
+            class="form-control"
+            placeholder="Enter the last name"
+            required
+            minlength="3"
+            maxlength="6"
+          />
+
+          <div
+            *ngIf="lastname.touched && lastname.invalid"
+            class="text-danger m-2"
+          >
+            <p *ngIf="lastname.errors.required">Last name is required</p>
+            <p *ngIf="lastname.errors.minlength">
+              Last name should be minimum 3 characters
+            </p>
+          </div>
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            ngModel
+            #email="ngModel"
+            placeholder="Enter the email"
+            required
+          />
+          <div *ngIf="email.touched && email.invalid" class="text-danger m-2">
+            <p *ngIf="email.errors.required">Email is required</p>
+          </div>
+
+          <label for="phone">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="form-control"
+            ngModel
+            #phone="ngModel"
+            placeholder="Enter the phone number"
+            required
+          />
+          <div *ngIf="phone.touched && email.invalid" class="text-danger m-2">
+            <p *ngIf="phone.errors.required">Phone number is required</p>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <label *ngFor="let gender of genderList">
+              <input
+                type="radio"
+                id="gender"
+                ngModel
+                name="gender"
+                value="{{ gender.name }}"
+              />
+              {{ gender.name }}
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country" class="form-control" ngModel>
+              <option
+                *ngFor="let country of countryList; index as i"
+                [ngValue]="i"
+                >{{ country }}</option
+              >
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-block" [disabled]="!form.valid">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+<!--Angular 2-->
+<!--<div>
+  <h1 class="text-success" *ngIf="users.length > 0">Users are here</h1>
+  <ul class="list-group">
+    <li class="list-group-items" *ngFor="let user of users">{{ user }}</li>
+  </ul>
+</div>
+<div>
+  <h1 class="text-danger" *ngIf="users.length == 0">
+    No users are here
+  </h1>
+</div>-->
+
+<!--Angular 4-->
+<!--<div *ngIf="users.length > 0; then usersList; else noUsersList"></div>
+<ng-template #usersList>
+  <ul class="list-group">
+    <li
+      class="list-group-item mt-2"
+      *ngFor="
+        let user of users;
+        index as i;
+        even as isEven;
+        odd as isOdd;
+        first as isFirst;
+        last as isLast
+      "
+    >
+      <span class="badge badge-dark p-2 mr-2">{{ i + 1 }}</span>
+      {{ user }}
+      <span class="badge btn-success float-right" *ngIf="isEven">Even</span>
+      <span class="badge btn-danger float-right" *ngIf="isOdd">Odd</span>
+      <span class="badge btn-success" *ngIf="isFirst">First</span>
+      <span class="badge btn-danger" *ngIf="isLast">Last</span>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noUsersList>
+  <h1 class="text-danger">No user here</h1>
+</ng-template>
+-->
+
+<!--hidden property-->
+<!--<div [hidden]="users.length == 0">Users are here</div>
+<div [hidden]="users.length > 0">No users are here</div>-->
+
+<!--<span [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">
+    <span class="text-danger">Red color here</span>
+  </p>
+  <p *ngSwitchCase="'green'">
+    <span class="text-success">Green color here</span>
+  </p>
+  <p *ngSwitchDefault>
+    <span class="text-dark">No other display</span>
+  </p>
+</span>-->
+
+<!--//Attribute directive
+<button [ngClass]="'btn btn-dark'">Submit</button>
+//String way
+<button [ngClass]="['btn', 'btn-success']">Reset</button>
+//Array way
+<button [ngClass]="{ btn: true, 'btn-danger': true }">Cancel</button>
+//Object way-->
+
+<!--ngClass-->
+<!--<div>
+  <button (click)="toggleState()">Submit</button>
+  <div [ngClass]="dynamicCss()">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, atque.
+    Numquam, esse? Dolores beatae enim dolor repudiandae laudantium maxime ullam
+    minima voluptate ut nemo atque aliquam, deserunt temporibus mollitia quam
+    explicabo ad. Tempore laboriosam eum eius nemo excepturi. Ipsum sed sint
+    assumenda commodi voluptatibus harum, laudantium perferendis! Ea quisquam
+    dolore eos similique debitis quidem error alias dolor cumque? Rem atque quia
+    beatae saepe eum ipsa? Libero nulla exercitationem accusantium animi ab
+    temporibus, dolorem earum eaque nam, architecto error expedita laudantium
+    autem totam iure natus ipsa, ullam dignissimos maiores sit. Delectus non
+    dicta ratione, vel voluptas architecto sunt dolorum molestiae! Nesciunt.
+  </div>
+</div>-->
+
+<!--<button [ngClass]="['btn', 'btn-danger', 'mt-2']" (click)="toggleState()">
+  Add dynamic class to div
+</button>
+<div [ngClass]="addDynamicClass()">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, vitae
+  molestias! Explicabo, quidem pariatur hic recusandae quod, iure sapiente odit
+  vel assumenda itaque, repellendus ipsum molestias! Possimus, accusantium optio
+  dicta harum consequatur deserunt saepe modi facere consequuntur magni quidem
+  a.
+</div>-->
+
+<!--ngStyle-->
+<!--<div class="container">
+  <ul class="list-group">
+    <li
+      class="list-group-item mt-2"
+      *ngFor="let user of users"
+      [ngStyle]="{ color: user.gender === 'Female' ? 'green' : 'red' }"
+    >
+      {{ user.name }}
+      {{ user.age }}
+      {{ user.gender }}
+      {{ user.country }}
+    </li>
+  </ul>
+</div>-->
+
+<div class="container">
+  <div class="form" anu>
+    <!--<form action="">
+      <input type="text" class="form-control" />
+    </form>-->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+      consequatur nam quo iusto corrupti aperiam odit omnis dignissimos quasi
+      alias.
+    </p>
+  </div>
+</div>

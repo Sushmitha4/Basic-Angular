@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-bordered table-primary mt-4">
+    <tr>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+      <th>Emp Designation</th>
+      <th>Emp Salary</th>
+      <th>Emp Education</th>
+      <th>Emp Percentage</th>
+      <th>Emp Doj</th>
+      <th>Emp Gender</th>
+      <th>Emp Location</th>
+    </tr>
+
+    <tr *ngFor="let emp of empDetails">
+      <th>{{ emp.emp_id }}</th>
+      <th>{{ emp.emp_name | gender: emp.emp_gender }}</th>
+      <th>{{ emp.emp_designation | titlecase }}</th>
+      <th>{{ emp.emp_salary | currency: "INR":true }}</th>
+      <th>{{ emp.emp_education | uppercase }}</th>
+      <th>{{ emp.emp_percentage | percent: "1.3-5" }}</th>
+      <th>{{ emp.emp_doj | date: "fullDate" | uppercase }}</th>
+      <th>{{ emp.emp_gender }}</th>
+      <th>{{ emp.emp_location }}</th>
+    </tr>
+  </table>
+</div>
